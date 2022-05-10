@@ -1,2 +1,2 @@
 <h1 align="center"> Projeto final Modulo 2 </h1>
-<i class="devicon-nodejs-plain colored"></i>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Simples Ideias">
