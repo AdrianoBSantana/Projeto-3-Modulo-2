@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href = "/img/icon.png" type="image/x-icon">
+    <link href="/css/style.css" rel="stylesheet">
+    <title> Página Inicial </title>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <div id="sub__header"> </div>
+        <div class="alert">
+            <% if (message != '') { %>
+                <%- include('./partials/alerts.ejs') %>
+            <% } %>
+        </div>
+        <section id="card__container">
+            <% listHerois.forEach(element => { %>
+            <a href="/detalhes/<%= element.id %> ">
+                <article class="cards">
+                    <div class="card_img">
+                        <img src="<%= element.img %> " alt="<%= element.nome %> ">
+                    </div>
+                    <div class="card_name">
+                        <%= element.nome %>
+                    </div>
+                </article>
+            </a>
+            <div class="btn__container">
+                <a href="/deletar/<%= element.id %> "><i class="fa-solid fa-trash" ></i> </a>
+                <a href="/editar/<%= element.id %> "> <i class="fa-solid fa-pencil"></i> </a>
+            </div>
+
+
+            <% }) %>
+        </section>
+    </main>
+    <script src="/script/script.js"></script>
+    
+</body>
+
+</html>

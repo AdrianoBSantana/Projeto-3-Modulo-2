@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href = "/img/icon.png" type="image/x-icon">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="/css/style.css" rel="stylesheet">
+    <title> Criar </title>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <div id="sub__header"> </div>
+        <div class="alert">
+            <% if (message != '') { %>
+                <%- include('./partials/alerts.ejs') %>
+            <% } %>
+        </div>
+        <section id="form__container">
+            <form method="post" action="/criar">
+                <fieldset>
+                    <legend> Criar Herói </legend>
+                    <fieldset class="fieldset__data">
+                        <input type="text" name="nome" required>
+                        <label for="nome"> Nome do Herói </label>
+                    </fieldset>
+
+                    <fieldset class="fieldset__data">
+                        <input type="text" name="identidade" required>
+                        <label for="identidade"> Identidade </label>
+                    </fieldset>
+
+                    <fieldset class="fieldset__data">
+                        <input type="text" name="genero" required>
+                        <label for="genero"> Gênero </label>
+                    </fieldset>
+
+                    <fieldset class="fieldset__data">
+                        <input type="text" name="criadores" required>
+                        <label for="criadores"> Criador(es) </label>
+                    </fieldset>
+                    <fieldset class="fieldset__data">
+                        <input type="url" name="img" required>
+                        <label for="img"> Imagem </label>
+                    </fieldset>
+                    <div id="btn__container">
+                        <button id="btn__submit" type="submit"> Enviar </button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <script src="/script/script.js"></script>
+</body>
+
+</html>

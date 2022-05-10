@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href = "/img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <title> Editar </title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <div id="sub__header"> </div>
+        <section id="form__container">
+            <form method="post" action="/editar/<%= heroiAtual.id %> ">
+                <fieldset>
+                    <legend> Editando o <%= heroiAtual.nome %>  </legend>
+                    <fieldset class="fieldset__data">
+                        <input type="text" name="nome" required value="<%= heroiAtual.nome %> ">
+                        <label for="nome"> Nome Herói </label>
+                    </fieldset>
+
+                    <fieldset class="fieldset__data">
+                        <input type="text" name="identidade" required value="<%= heroiAtual.identidade %>">
+                        <label for="identidade"> Identidade </label>
+                    </fieldset>
+
+                    <fieldset class="fieldset__data">
+                        <input type="url" name="img" required value="<%= heroiAtual.img %>">
+                        <label for="img"> Imagem </label>
+                    </fieldset>
+
+                    <fieldset class="fieldset__data">
+                        <input type="text" name="genero" required value="<%= heroiAtual.genero %>">
+                        <label for="genero"> Gênero </label>
+                    </fieldset>
+
+                    <fieldset class="fieldset__data">
+                        <input type="text" name="criadores" required value="<%= heroiAtual.criadores %>">
+                        <label for="criadores"> Criadores </label>
+                    </fieldset>
+
+                    <div id="btn__container">
+                        <button id="btn__submit" type="submit"> Enviar </button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
